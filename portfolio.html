@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Writefest '25</title>
+  <link rel="icon" type="images/x-icon" href="https://gifs.crd.co/assets/images/gallery25/f2a79b49.gif?v=ef433a6f">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
+  
+  <style>
+    body {
+      background-color:#772E25;
+      font-family:Playfair Display;
+    }
+    ::selection {
+      background-color:#92817A80;
+    }
+    @font-face {
+      src: url(https://dl.dropbox.com/s/ktlx5w7t8gk42nb/SakeMoru-Regular.ttf);
+      font-family:SakeMoru;
+    }
+    .title {
+      background-color:#EDDDD4;
+      width:35%;
+      margin:0 auto;
+      text-align:center;
+      margin-top:20px;
+      border-radius:50%;
+      padding:30px;
+    }
+    #name {
+      font-family:SakeMoru;
+      font-size:350%;
+    }
+    .flip-card {
+      background-color: transparent;
+      width: 300px;
+      height: 300px;
+      border-radius:10%;
+      perspective: 1000px;
+    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 1s;
+      transform-style: preserve-3d;
+    }
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden; 
+      backface-visibility: hidden;
+    }
+    .flip-card-back {
+      background-color: #EDDDD4;
+      color: #1D1A05;
+      border-radius: 10%;
+      transform: rotateY(180deg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+    #profile {
+      width:300px;
+      height:300px;
+      border-radius:10%;
+    }
+    .textbox-container {
+      width: 400px;
+      height: 350px;
+      background-color: #EDDDD4;
+      padding: 20px;
+      margin: 20px auto;
+      font-size: 18px;
+      overflow: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: justify;
+      flex-direction: column;
+    }
+    .textbox-container h1 {
+      text-align:center;
+    }
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px auto;
+      width: 120px;
+    }
+    .textbox-wrapper {
+      margin-bottom: 40px;
+    } 
+    .directive {
+      font-family:Roboto Mono;
+      font-size:80%;
+    } 
+    .directive ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+    .directive .signoff {
+      display: block;
+      font-size:79%;
+    }
+    .directive em {
+      display: block;
+      color: #555;
+      font-size:79%;
+    }
+    h1 {
+      font-size:150%;
+    }
+    .bottombar {
+      background-color:#EDDDD4;
+      padding:20px;
+      text-align:center;
+      font-size:200%;
+      padding-bottom:5px;
+    }
+  </style>
+  
+</head>
+  <body>
+
+    <div class="title">
+      <span id="name">giana's portfolio ?!</span>
+    </div>
+
+    <div class="container">
+      <div class="row justify-content-center">
+
+        <div class="col-auto" style="margin-top: 0px;">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="https://i.ibb.co/zT3zBnX1/image.jpg" alt="otter profile" id="profile">
+              </div>
+              <div class="flip-card-back">
+                <h1>hello! <3</h1>
+                <p>i'm giana, born in july and i love writing and reading. i'm a big bookworm. i love reading fiction books && classics. aside from this, i'm also kinda good at coding! :3</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-auto" style="margin-top: 80px;">
+          <div class="textbox-wrapper">
+            <div class="textbox-container" id="textbox1"></div>
+            <div class="nav-buttons">
+              <button class="prevBtn" data-target="1">← prev</button>
+              <button class="nextBtn" data-target="1">next →</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-auto" style="margin-top: 160px;">
+          <div class="textbox-wrapper">
+            <div class="textbox-container" id="textbox2"></div>
+            <div class="nav-buttons">
+              <button class="prevBtn" data-target="2">← prev</button>
+              <button class="nextBtn" data-target="2">next →</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row justify-content-center">
+
+        <div class="col-auto" style="margin-top: 160px;">
+          <div class="textbox-wrapper">
+            <div class="textbox-container" id="textbox3"></div>
+            <div class="nav-buttons">
+              <button class="prevBtn" data-target="3">← prev</button>
+              <button class="nextBtn" data-target="3">next →</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-auto" style="margin-top: 80px;">
+          <div class="textbox-wrapper">
+            <div class="textbox-container" id="textbox4"></div>
+            <div class="nav-buttons">
+              <button class="prevBtn" data-target="4">← prev</button>
+              <button class="nextBtn" data-target="4">next →</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-auto" style="margin-top: 0px;">
+          <div class="textbox-wrapper">
+            <div class="textbox-container" id="textbox5"></div>
+            <div class="nav-buttons">
+              <button class="prevBtn" data-target="5">← prev</button>
+              <button class="nextBtn" data-target="5">next →</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>    
+
+    <div class="container">
+      <div class="row justify-content-center">
+
+        <div class="col-auto" style="margin-top: 0px;">
+          <div class="textbox-wrapper">
+            <div class="textbox-container" id="textbox6"></div>
+            <div class="nav-buttons">
+              <button class="prevBtn" data-target="6">← prev</button>
+              <button class="nextBtn" data-target="6">next →</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-auto" style="margin-top: 80px;">
+          <div class="textbox-wrapper">
+            <div class="textbox-container" id="textbox7"></div>
+            <div class="nav-buttons">
+              <button class="prevBtn" data-target="7">← prev</button>
+              <button class="nextBtn" data-target="7">next →</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-auto" style="margin-top: 160px;">
+          <div class="textbox-wrapper">
+            <div class="textbox-container" id="textbox8"></div>
+            <div class="nav-buttons">
+              <button class="prevBtn" data-target="8">← prev</button>
+              <button class="nextBtn" data-target="8">next →</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="bottombar">
+      <p style="font-family:SakeMoru">thanks for reading!</p>
+      <p style="font-size:50%">find me at bacordo.giana@gmail.com <3</p>
+    </div>
+
+    <script>
+      const textboxes = {
+        1: {
+          pages: [
+            "<h1>Hand-Me-Down</h1>",
+            "I don’t know where I end and everyone else begins.",
+            "Even my most miniscule qualities are borrowed. My eyes from my father. My love for reading from my aunt. My way of mixing ketchup and mayonnaise from a cousin that I haven’t seen since Grade 7. When, then, do they stop and I begin? And if all of me is just them, then what is there to write a memoir about?",
+            "I can tell you how a friend used to laugh, that I talked to her so much that I could mimic her Irish accent by heart. I can tell you that my favorite pen was lent to me by a classmate and never returned. I can tell you that I am quick to anger only because my grandmother never let anyone walk over her, and I caught that trait like an illness.",
+            "If, then, all of these things are me, then it means that I can’t tell you anything more about myself. I am a coalescence of all the people I’ve ever met, nothing more than a scrapbook of outdated quirks and oddities that, really, never quite fit together in the first place.",
+            "Still, I suppose that is what makes it worth writing down in the first place. In the same way, I am also a memorial for all of the people I’ve ever met. Their “memory” lives on in me. I may never talk to Ana again, but for as long as I remain unchanged, her 14-year-old self’s humor will always be immortalized in me. I may never see Mr. Loreto again, but for as long as I go on any stage, I will always do breathing exercises like he taught me to.",
+            "Maybe I am nothing more than pieces of other people. But since they’re worth remembering, then maybe that’s enough."
+          ],
+          currentPage: 0
+        },
+        2: {
+          pages: [
+            "<h1>FORCE is the interaction</h1>",
+            "FORCE is oft-defined in such a way that assumes two bodies are separate. If one push and pulls and tugs and yanks and shoves in this way or that, then FORCE is created. I push, you pull. I push, you retreat. I push, and distance widens like a wound.",
+            "It is entirely unscientific for you to stay. Action. Reaction. FORCE. Go. If you do not go, the formula collapses. And yet you stay. You stay, and the structure breaks, and the neat edges of cause and consequence fray like old rope. You stay, and suddenly I am not sure who is pushing, or if we were ever separate to begin with."
+          ],
+          currentPage: 0
+        },
+        3: {
+          pages: [
+            "<h1>Little Things Villanelle</h1>",
+            "You know exactly what to do.<br>The silence doesn’t tell you why.<br>The small things always pull us through.<br><br>The comforts, however few,<br>Slip past us as the days drift by.<br>You know exactly what to do.",
+            "Our time together is never subdued<br>The hours, however long, slip by, <br>The small things always pull us through.<br><br>The small things still hold true,<br>The days just drift by,<br>You know exactly what to do.",
+            "The hours always renew,<br>The feeling runs dry,<br>The small things always pull us through.<br><br>The quiet settles too,<br>And, in my head, I always reply—<br>You know exactly what to do.<br>The small things always pull us through."
+          ],
+          currentPage: 0
+        },
+        4: {
+          pages: [
+            "<h1>illness (and other unimportant things)</h1>",
+            "The first thing you’ll notice is the inhaler. Tucked securely into her purse, right next to her lip gloss, always at the ready for her to use. Blue, standard, forgettable. But, with the way she was, it was almost a part of her body. Every conversation peppered with the click of a cap, the sharp inhale after.",
+            " When she was twelve, her asthma had manifested for the first time. It’s triggered, the doctor said, by exertion. Otherwise mild. It never looked mild, though. Especially not during the schoolwide debates, her face flushed red and her chest heaving back into her ribs as she scoured for her words. The other team stared at her like she was about to pass out, but she didn’t. She never did. But the inhaler was always there, clicking against her wallet, louder than the applause.",
+            " The pills came later, came when it started getting bad. A plastic bottle with unpronounceable names typed in neat medical font, her name and a time scribbled on top of the cap with Sharpie so she wouldn’t forget. I’m basically a drug addict, she would joke, popping three pills into her mouth at a time and swallowing dry. Everyone knew they were painkillers, but they’d play along just the same.",
+            "The White Flower oil isn’t as obvious. Small glass bottle, shoved somewhere between receipts and loose candy wrappers in her bag, easy to miss until it leaks. Strong—menthol, eucalyptus, camphor—the kind of sharp that clears your sinuses in the most forceful way possible. It clings to her clothes, her hair, everything she touches. The whole room starts smelling like a pharmacy if you sit with her long enough.",
+            "The smell doesn’t fade. Neither does the pain. Both follow her like ghosts, clinging to her every breath."
+          ],
+          currentPage: 0
+        },
+        5: {
+          pages: [
+            "<h1>Moon Lady</h1>",
+            "The color of her blood was the least of his worries. The silver seeped through his fingers, staining his cuticles a leaden gray. The surreality of it almost lent him the illusion that nothing of much significance had happened.",
+            "“Stem the…” Her sentence petered out as he regarded her with something akin to horror. Her eyes narrowed. “Should I bleed out before you do anything? Howard!”",
+            "He scrambled into action, nudged on by the anger in her voice more than any sense of urgency. All at once, he noticed many things—many things that should have stuck out to him a long, long time ago. ",
+            "Like: Her body was colder than it was warm. Cold that permeated through his chest, creeping over his lungs until he was robbed of anything to say.<br>Like: Pain didn’t seem to affect her so much. Even as he dug his fingers into the jagged, icy wound, she barely flinched. The overwhelming feeling about her seemed to be fury. He wasn’t sure if she’d notice if he stabbed her again.",
+            "Once the bleeding had tapered off, they stared long and hard at each other, waiting."
+          ],
+          currentPage: 0
+        },
+        6: {
+          pages: [
+            "<div style='display: flex; flex-direction: column; align-items: center; justify-content: center;'>" +
+              "<h1 style='margin-bottom: 10px;'>Jesus Calms the Storm</h1>" +
+              "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg/480px-Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg' alt='The Storm on the Sea of Galilee by Rembrandt van Rijn' style='max-width: 90%; max-height: 200px; object-fit: contain;'>" +
+              "<p style='font-size: 14px; color: #555; margin-top: 10px;'>The Storm on the Sea of Galilee by Rembrandt van Rijn</p>" +
+            "</div>",
+            "O God, o God, o God, where is my faith?<br>The squall, mighty and insurmountable,<br>Rages ‘round, throwing us off of our feet<br>If there ever was a faithless moment—<br><br>The boat kicks forward, pitching hard beneath,<br>Sending us to our knees. At once, we call:<br>“Messiah, lamb of God, His wrath is nigh,”<br>“Have mercy now, or we all perish here!”",
+            "The effort of which took naught but a glare.<br>“Heel, violent, mutinous tides! Be still!”<br>Serenity, altogether jarring,<br>as his as he intoned once more to us— <br><br>“Fear not, you, who are fickle and trembling,<br>“For the winds and the waves obey the Lord.”"
+          ],
+          currentPage: 0
+        },
+        7: {
+          pages: [
+            "<h1>Control the Narrative</h1>",
+            "<div class='directive'>" +
+            "<strong style='display: block; text-align: center;'>PROJECT VEIL 2040</strong>" +
+            "<br>Effective JANUARY 01, 2040, all citizens of the Republic of Sola will be required to undergo mandatory ocular implant surgery in compliance with the National Visual Security Act (NVSA). The V-9 Retinal Unit will safely and permanently restrict unauthorized visual perception, ensuring the protection of public order, cognitive stability, and national unity.",
+            "<div class='directive'>" +
+            "Failure to comply with the operation will result in immediate suspension of citizen privileges, including but not limited to:" +
+            "<ul>" +
+            "<li>Employment eligibility</li>" +
+            "<li>Legal citizenship in the Republic of Sola</li>" +
+            "<li>Right to counsel</li>" +
+            "</ul>" +
+            "The future is clear. The future is secure. The future cannot be seen without trust." +
+            "<br><br><strong class='signoff'>Republic of Sola Ministry of Unity and Safety</strong>" +
+            "<em>This directive is final and non-negotiable.</em>" +
+            "</div>",
+            "<div class='directive'>MARCH 16, 2060</div>" +
+            "Jordie’s vision came back in patches, revealing one thing at a time.<br>First, his hand, though it didn’t register as such until a few minutes had passed. How many years had it been since he’d seen the thing? Experimentally, he flexed his fingers, cringing when he saw his bones jutting from beneath his skin. Quickly, he put his hand away. The sight of it almost revulsed him.",
+            "Next, he saw Hugo napping in the bed next to his. Immediately, he had the urge to wake him up. His big brother, for sure, would know what was going on, would know how to fix this. He reached out to shake him awake. Immediately, however, he drew back as if burned, repulsed again by the sight of his hand. The security of blindness was gone. Now, confronted with the proof of his own body, he felt almost sick.",
+            "“Hugo.” His voice was clear, lacking the waver he’d thought it would have. Somehow, a part of him had thought his voice would be visible somehow, like soft blue waves emanating through the air. Given his current predicament, however, he spared no time to think about that. “Hugo, wake up. Come on. I–I can see!”",
+            "Finally verbalizing the thought made him seize up. See. He’d had to grasp for that word, seeing as it hadn’t been taught in schools for ages out of a lack of necessity. For a moment, he wondered how he’d gotten to learn it in the first place. Maybe from one of those vintage books he liked listening to…<br><br>It was meandering thoughts like those that distracted him as Hugo’s eyes snapped open.",
+            "“Don’t.” Hugo sat up, clamping his hand over Jordie’s mouth. His eyes were wild with fear and anger. “Shut up, Jordie. You have no idea what you’re talking about. I need you to never, ever say something like that again. You can’t see. No one can see. Got it?”<br><br>Their eyes met, his hand still clamped over Jordie’s mouth, and all at once, he understood.<br><br>Mutely, he nodded.",
+            "Hugo sighed in relief, finally letting up. “Good,” he mumbled, brushing his hands off on his pants. Jordie wanted—no, needed—to ask him around a million different questions. His voice didn’t seem to want to cooperate with him, however. Almost as if he’d traded one ability for another.<br><br>After a while, he managed something. “You too?” His voice was small.",
+            "His voice was tight as he responded, “I don’t know what you’re talking about.”<br><br>Hugo’s eyes had lost their hardness, however. His chest still heaved from the exertion of his outburst, and as he looked at Jordie, he just seemed terrified. “God, why you?” he whispered, more to himself. “Why you, of all people?”",
+            "Jordie tilted his head. He couldn’t pretend to understand what he was saying, but he had a feeling it meant something. Before he could ask, however, his brother was speaking again. “You can’t tell Mom or Dad, either. Not a single one of your friends. I don’t care that you trust them. Not a soul other than me, okay? You don’t understand what they’ll do to you.”",
+            "“Who’s they?” The questions flooded out of him. “What do you mean, why me? And why are you being so weird about this? I don’t get it. It’s not that big of a deal, right? We can just get it fixed somewhere. Let’s just ask, like, a V-9 repairman. C’mon, Hugo…”",
+            "“They won’t fix it for us.” He scoffed. “Do you know what they do to problems?”<br><br>“Solve them?”<br><br>“Eliminate them. God, Jordie.” He rubbed his eyes hard. “I forget you’re 16 sometimes.”",
+            "They sat in silence for a long time. It was strange, this tension that lay thick between them. Jordie had never heard his brother seem so urgent before, so fearful. It was so, so wrong. Still, he kept quiet, not wanting to make things any worse. He had enough to ponder about, anyway.",
+            "“Who’s they?” he asked again, finding that one thing was still unanswered.<br><br>“If I knew, they’d be gone by now.” He smiled bitterly. “Look, there’s really not much to see here, okay? Not in our house, anyway.” He coughed into his fist, masking a grimace. “Outside… That’s a different story. You can’t, um, go outside. Not for now, anyway. Let’s give it a week.”<br><br>“But I have school!”",
+            "The bark of laughter that came out of Hugo startled him. “Oh, school. Really? As if that does anything for you.” At the silence that met his words, he sighed. The sigh he only sighed when he felt aggrieved by his little brother’s naïveté. The sigh that made Jordie immediately relax. The sigh that let him know that everything would be taken care of, at least by him. “I’ll forge your doctor’s certificate. Just don’t be a wuss and rat me out.”",
+            "He grinned. “Okay!” That, he could do.<br><br>Hugo glared at him, clearly trying to muster his anger. However, the only thing that he seemed to be was sad. So, so sad. “The first thing I need to teach you…” Reaching forward, he passed his hand over Jordie’s eyes, cloaking his world in darkness once more. Deprived of his sight, he found that he sorely missed it. “...is how to see without seeing.”",
+            "That made about zero sense. He sighed, rushing to elaborate.<br><br>“What I mean is—ah, it’s hard to explain. Just watch me.”",
+            "Hugo stood up and wandered around their room. But there was a different quality to the way he explored, something he couldn’t quite pinpoint. His eyes had glazed over, focused somewhere to the right of him, focused on nothing at all. But as he gripped the wall, following the various shelves to navigate, he finally realized what it was.<br><br>“Oh. Oh!” He perked up. “I get it!”",
+            "“Yeah?” He turned back to Jordie, meeting his eyes again with a proud little smile. “Okay, I wanna see you try. And I’m not letting you outside until you can do this like a natural. Remember, neither of us can see, okay?”",
+            "They made a game of it. The rest of the day was spent stumbling over furniture and giggling at each other, practicing the “blindness” that they’d once had. It really shouldn’t have been as fun as it was. But as with most forbidden things, the danger only made it sweeter. They tripped, they crashed into walls, they whispered warnings and dared each other to cheat with quick, guilty glances.",
+            "And if, later that night, Hugo prayed and cried and pleaded under the moon for the first time in years—well, no one had to see that but him.",
+            "<div class='directive'>" +
+            "<strong style='display: block; text-align: center;'>PROJECT VEIL 2040: TAMPERING CLAUSE</strong>" +
+            "<br>Any removal, alteration, or attempted interference with the V-9 Retinal Unit constitutes a direct violation of the National Visual Security Act (NVSA). Offenders will face immediate detention and formal decitizenship proceedings.",
+            "<div class='directive'>" +
+            "<strong>First Offense: Permanent revocation of employment rights and digital identity privileges. Indefinite surveillance designation.<br>Second Offense: Designation as a visual threat and mandatory relocation to a Restricted Zone.<br>Third Offense: Summary execution under Article 17 of the National Visual Security Act.</strong>" +
+            "<br>All perception must remain state-verified." +
+            "<br><br><strong class='signoff'>Republic of Sola Ministry of Unity and Safety</strong>" +
+            "<em>This directive is final and non-negotiable.</em>" +
+            "</div>",
+          ],
+          currentPage: 0
+        },
+        8: {
+          pages: [
+            "<h1>Living Residents</h1>",
+            "",
+            "",
+          ],
+          currentPage: 0
+        },
+      };
+
+      function updateText(id) {
+        const textbox = document.getElementById(`textbox${id}`);
+        textbox.innerHTML = textboxes[id].pages[textboxes[id].currentPage];
+      }
+
+      document.querySelectorAll('.prevBtn').forEach(button => {
+        button.addEventListener('click', () => {
+          const id = button.dataset.target;
+          if (textboxes[id].currentPage > 0) {
+            textboxes[id].currentPage--;
+            updateText(id);
+          }
+        });
+      });
+
+      document.querySelectorAll('.nextBtn').forEach(button => {
+        button.addEventListener('click', () => {
+          const id = button.dataset.target;
+          if (textboxes[id].currentPage < textboxes[id].pages.length - 1) {
+            textboxes[id].currentPage++;
+            updateText(id);
+          }
+        });
+      });
+
+      for (const id in textboxes) {
+        updateText(id);
+      }
+    </script>
+
+  </body>
+</html>
