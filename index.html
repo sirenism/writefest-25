@@ -89,10 +89,12 @@
       justify-content: center;
       align-items: center;
       text-align: justify;
+      text-indent:50px;
       flex-direction: column;
     }
     .textbox-container h1 {
       text-align:center;
+      text-indent:0px;
     }
     .nav-buttons {
       display: flex;
@@ -106,6 +108,7 @@
     .directive {
       font-family:Roboto Mono;
       font-size:80%;
+      text-indent:0px;
     } 
     .directive ul {
       list-style-type: disc;
@@ -129,6 +132,21 @@
       text-align:center;
       font-size:200%;
       padding-bottom:5px;
+    }
+    button {
+      border-radius:10%;
+      background-color:#DDD2BB;
+      border:1px #B49A67 solid;
+    }
+    .prevBtn {
+      margin-right:5px;
+    }
+    .nextBtn {
+      margin-left:5px;
+    }
+    .poem {
+      text-align:center;
+      text-indent:0px;
     }
   </style>
   
@@ -281,9 +299,9 @@
         3: {
           pages: [
             "<h1>Little Things Villanelle</h1>",
-            "You know exactly what to do.<br>The silence doesn’t tell you why.<br>The small things always pull us through.<br><br>The comforts, however few,<br>Slip past us as the days drift by.<br>You know exactly what to do.",
-            "Our time together is never subdued<br>The hours, however long, slip by, <br>The small things always pull us through.<br><br>The small things still hold true,<br>The days just drift by,<br>You know exactly what to do.",
-            "The hours always renew,<br>The feeling runs dry,<br>The small things always pull us through.<br><br>The quiet settles too,<br>And, in my head, I always reply—<br>You know exactly what to do.<br>The small things always pull us through."
+            "<span class='poem'>You know exactly what to do.<br>The silence doesn’t tell you why.<br>The small things always pull us through.<br><br>The comforts, however few,<br>Slip past us as the days drift by.<br>You know exactly what to do.</span>",
+            "<span class='poem'>Our time together is never subdued<br>The hours, however long, slip by, <br>The small things always pull us through.<br><br>The small things still hold true,<br>The days just drift by,<br>You know exactly what to do.</span>",
+            "<span class='poem'>The hours always renew,<br>The feeling runs dry,<br>The small things always pull us through.<br><br>The quiet settles too,<br>And, in my head, I always reply—<br>You know exactly what to do.<br>The small things always pull us through.</span>"
           ],
           currentPage: 0
         },
@@ -314,10 +332,10 @@
             "<div style='display: flex; flex-direction: column; align-items: center; justify-content: center;'>" +
               "<h1 style='margin-bottom: 10px;'>Jesus Calms the Storm</h1>" +
               "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg/480px-Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg' alt='The Storm on the Sea of Galilee by Rembrandt van Rijn' style='max-width: 90%; max-height: 200px; object-fit: contain;'>" +
-              "<p style='font-size: 14px; color: #555; margin-top: 10px;'>The Storm on the Sea of Galilee by Rembrandt van Rijn</p>" +
+              "<p style='font-size: 14px; color: #555; margin-top: 10px; text-indent:0px'>The Storm on the Sea of Galilee by Rembrandt van Rijn</p>" +
             "</div>",
-            "O God, o God, o God, where is my faith?<br>The squall, mighty and insurmountable,<br>Rages ‘round, throwing us off of our feet<br>If there ever was a faithless moment—<br><br>The boat kicks forward, pitching hard beneath,<br>Sending us to our knees. At once, we call:<br>“Messiah, lamb of God, His wrath is nigh,”<br>“Have mercy now, or we all perish here!”",
-            "The effort of which took naught but a glare.<br>“Heel, violent, mutinous tides! Be still!”<br>Serenity, altogether jarring,<br>as his as he intoned once more to us— <br><br>“Fear not, you, who are fickle and trembling,<br>“For the winds and the waves obey the Lord.”"
+            "<span class='poem'>O God, o God, o God, where is my faith?<br>The squall, mighty and insurmountable,<br>Rages ‘round, throwing us off of our feet<br>If there ever was a faithless moment—<br><br>The boat kicks forward, pitching hard beneath,<br>Sending us to our knees. At once, we call:<br>“Messiah, lamb of God, His wrath is nigh,”<br>“Have mercy now, or we all perish here!”</span>",
+            "<span class='poem'>The effort of which took naught but a glare.<br>“Heel, violent, mutinous tides! Be still!”<br>Serenity, altogether jarring,<br>as his as he intoned once more to us— <br><br>“Fear not, you, who are fickle and trembling,<br>“For the winds and the waves obey the Lord.”</span>"
           ],
           currentPage: 0
         },
@@ -373,8 +391,15 @@
         8: {
           pages: [
             "<h1>Living Residents</h1>",
-            "",
-            "",
+            "He comes into the graveyard almost by accident.",
+            "The only thing that reminds him that, yes, he has gone somewhere he shouldn’t have, is the odd sense of decay. It permeates the very air around him. The damp earth squishes underneath his feet, still moist from the rain.",
+            "As the mud clings onto the soles of his shoes, he feels as if the ground itself is trying to cling onto him, trying to recruit another body for its purposes. Perhaps the worst part of it all is the sickly sweet scent emanating from the discarded flowers. Their lively pinks and reds have long since dulled to a cool grey. Almost like an attempt to match the headstones.",
+            "But, no, whatever he tells himself, this really is no accident. He knows why he’s here. Knows what’s buried with her, what he left with her. Knows that his necklace doesn’t belong here, tangled around a corpse. Even without looking at the headstone, he knows where the grave is, knows what the name says as he sinks down to his knees next to it, knows not to look. Looking, now, would be his undoing. In order to do what he needs to, he can never look.",
+            "Every six feet between him and that body feels necessary. The idea of getting any closer to her than he needs to… It sickens him to think that he’s undoing all that distance now. With trembling hands, he digs and digs and digs, pebbles and soil jostling in the space underneath his fingernails. He cannot look, and so he does not. He cannot look, and to blind him, his eyes well up with tears of their own accord. He does not even look when his fingers hit hard wood instead of more dirt.",
+            "The lock is easy to toy around with. In fact, it proves no challenge at all. Before his mind can catch up with his movements, he lifts the lid of the casket. Immediately, the smell hits him. Six months underground have not done so well for her. But it works out, anyway, all that methane and ammonia making his eyes go dewy once more. Numbing his mind of any common sense.",
+            "“You have something I own,” he tells her, and she doesn’t respond. He isn’t sure what he was expecting, but it’s a relief either way. With clumsy hands, he fumbles at her neck, finding the clasp that keeps his necklace secure. This odd sense of ownership is what keeps him together as he holds the little piece of jewelry in front of himself.",
+            "The fake gold has long since turned black, staining his fingers an unhealthy sort of green. The locket, however, still opens, revealing what he expects. The photo inside has long since rotted. Perhaps a mixture of her bodily fluids, gases, and general moisture has done it. It doesn’t matter. The picture’s gone, the gold’s worthless, but the weight of the object in his grip comforts him like nothing else. It’s proof that she’s really gone. That she wouldn’t fight him anymore, at least not for this.",
+            "No matter. Picture or no picture, he has collected what he needs to. With a long stare at her unblinking face, he stands up. The bile builds sharp and sour at the back of his throat, burning all the way up to his teeth.<br><br>He walks back the way he came."
           ],
           currentPage: 0
         },
